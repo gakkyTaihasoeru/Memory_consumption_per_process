@@ -10,5 +10,5 @@
 
 #memory_count
 #30秒ごとにtop_ps.shを実行する。
-* * * * * for i in `seq 0 30 59` ;do (sleep ${i} ; sh /root/scripts/top_ps.sh ) & done;
+* * * * * for i in `seq 0 30 59` ;do (sleep ${i} ; sh /root/scripts/top_ps.sh ) & done; > dev/null 2>&1
 ```
