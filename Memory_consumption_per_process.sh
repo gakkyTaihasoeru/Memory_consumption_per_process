@@ -4,7 +4,7 @@
 LOG_ROTATION=`date '+%Y%m%d%H'`
 LOG_TIME=`date '+%Y/%m/%d_%H:%M:%S'`
 SHORT_HOSTNAME=`hostname -s`
-LOG_FILE="/var/log/top_ps/${SHORT_HOSTNAME}_${LOG_ROTATION}_top_ps.log"
+LOG_FILE="/var/log/top_ps/${SHORT_HOSTNAME}_${LOG_ROTATION}_top_ps.log" 
 
 # date command
 echo -e "[date] \n${LOG_TIME}\n" >> $LOG_FILE
