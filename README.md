@@ -8,11 +8,11 @@
 
 # crontab -e
 
-#memory_count
-#30秒ごとにtop_ps.shを実行する。
-* * * * 1-5 for i in `seq 0 30 59` ;do (sleep ${i} ; sh /root/script/top_ps.sh ) & done; >/dev/null 2>&1
+# memory_usage
+# 月～金曜日に実行
+* * * * 1-5 sh /root/script/top_ps.sh >/dev/null 2>&1
 
-#memory_count LogRotation
-#7日前から過去まで検索した結果を削除する
-59 23 * * * find /exportf/log/top_ps/*top_ps.log -maxdepth 1 -mtime +7 | xargs rm -rf >/dev/null 2>&1
+# memory_usage LogRotation
+# 毎日23:59に実行
+59 23 * * * find /var/log/top_ps/*top_ps.log -maxdepth 1 -mtime +7 | xargs rm -rf >/dev/null 2>&1
 ```
